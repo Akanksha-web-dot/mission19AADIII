@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MISSION: AADIII 🎮</title>
+<title>MISSION AADIII 🎮</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -33,7 +33,7 @@ position:fixed;
 width:100%;
 height:100%;
 background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+linear-gradient(rgba(0,0,0,0.78),rgba(0,0,0,0.78)),
 url('https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop');
 
 background-size:cover;
@@ -42,18 +42,34 @@ z-index:-2;
 filter:blur(2px);
 }
 
+/* PAGE */
+
+.page{
+position:absolute;
+width:100%;
+height:100vh;
+display:none;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:20px;
+text-align:center;
+overflow-y:auto;
+}
+
+.active{
+display:flex;
+}
+
 /* GLITCH */
 
 .glitch{
-
-font-size:4rem;
+font-size:3.5rem;
 font-family:'Orbitron',sans-serif;
 font-weight:900;
-position:relative;
 text-transform:uppercase;
-color:#00e5ff;
 animation:glitch 1s infinite;
-
+color:#00e5ff;
 }
 
 @keyframes glitch{
@@ -80,46 +96,43 @@ text-shadow:3px 3px #ff00ff;
 
 }
 
-/* PAGE */
-
-.page{
-position:absolute;
-width:100%;
-height:100vh;
-display:none;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-padding:20px;
-text-align:center;
-overflow-y:auto;
-}
-
-.active{
-display:flex;
-}
-
 .subtitle{
-max-width:700px;
-line-height:1.8;
+max-width:800px;
+line-height:1.9;
 margin-top:20px;
 margin-bottom:20px;
+font-size:1.1rem;
 }
 
-/* BUTTON */
+/* TERMINAL */
+
+.terminal{
+font-family:monospace;
+color:#00ff99;
+text-align:left;
+line-height:2;
+margin-top:30px;
+font-size:1rem;
+background:rgba(0,0,0,0.45);
+padding:25px;
+border-radius:20px;
+max-width:800px;
+}
+
+/* BUTTONS */
 
 button{
 padding:15px 35px;
 border:none;
 border-radius:50px;
-background:linear-gradient(45deg,#00e5ff,#ff00ff);
-color:white;
+font-size:1rem;
 font-weight:bold;
 cursor:pointer;
 margin:15px;
 transition:0.3s;
-font-size:1rem;
-box-shadow:0 0 20px rgba(0,229,255,0.5);
+background:linear-gradient(45deg,#00e5ff,#ff00ff);
+color:white;
+box-shadow:0 0 25px rgba(0,229,255,0.5);
 }
 
 button:hover{
@@ -130,37 +143,14 @@ transform:scale(1.08);
 
 input{
 padding:15px;
-width:250px;
+width:260px;
 border:none;
 border-radius:30px;
 text-align:center;
 font-size:1rem;
 }
 
-/* INTRO */
-
-.terminal{
-font-family:monospace;
-font-size:1.2rem;
-color:#00ff99;
-text-align:left;
-max-width:800px;
-line-height:2;
-}
-
-/* YES NO */
-
-.choice-buttons{
-display:flex;
-gap:20px;
-position:relative;
-}
-
-#noBtn{
-position:relative;
-}
-
-/* MEMORIES */
+/* SLIDER */
 
 .slider{
 position:relative;
@@ -244,7 +234,7 @@ background:rgba(255,255,255,0.08);
 padding:40px;
 border-radius:30px;
 backdrop-filter:blur(10px);
-max-width:700px;
+max-width:750px;
 }
 
 .option{
@@ -267,9 +257,9 @@ background:#00e5ff33;
 background:rgba(255,255,255,0.08);
 padding:40px;
 border-radius:30px;
-line-height:2;
-max-width:850px;
 backdrop-filter:blur(10px);
+max-width:850px;
+line-height:2;
 }
 
 /* FINAL */
@@ -297,7 +287,7 @@ text-shadow:0 0 40px #ff00ff;
 
 <body>
 
-<!-- MUSIC -->
+<!-- AUDIO -->
 
 <audio autoplay loop>
 
@@ -310,17 +300,19 @@ text-shadow:0 0 40px #ff00ff;
 <section id="intro" class="page active">
 
 <h1 class="glitch">
-ACCESSING BIRTHDAY DATABASE...
+BOOTING SYSTEM...
 </h1>
 
 <div class="terminal">
 
-> SYSTEM BOOTING...<br>
-> LOADING CHAOS TRIO FILES...<br>
-> DETECTING AADIII...<br>
-> WARNING: HIGH LEVELS OF NONSENSE FOUND<br>
-> SCANNING ENGINEERING SURVIVAL DATA...<br>
-> ACCESS GRANTED 🎮
+> INITIALIZING BIRTHDAY DATABASE...<br>
+> DETECTING PLAYER: AADIII 🎮<br>
+> SCANNING ENGINEERING SURVIVAL RECORDS...<br>
+> WARNING: CHAOS LEVELS EXTREMELY HIGH 💀<br>
+> GYM ADDICTION DETECTED 💪<br>
+> SLEEPING DURING EXAM PREP DETECTED 😭<br>
+> LOADING CORE MEMORIES...<br>
+> ACCESS GRANTED 🎂
 
 </div>
 
@@ -339,13 +331,50 @@ ENTER PASSWORD 🔐
 </h1>
 
 <p class="subtitle">
-Only legendary idiots allowed.
+
+Only legendary chaos members allowed.
+
 </p>
 
 <input type="password" id="password" placeholder="ENTER PASSWORD">
 
 <button onclick="checkPassword()">
 UNLOCK
+</button>
+
+</section>
+
+<!-- AADIII INTRO -->
+
+<section id="aadiPage" class="page">
+
+<h1 class="glitch">
+PLAYER PROFILE: AADIII 🎮
+</h1>
+
+<div class="terminal">
+
+NAME: AADIII<br>
+ROLE: Gym addict 💪<br>
+SPECIAL SKILL: Sleeping before exams 😭<br>
+WEAKNESS: Saying “2 mins” and disappearing<br>
+ENGINEERING STATUS: Somehow surviving<br>
+ACHIEVEMENT: Legendary chaos member<br><br>
+
+WARNING ⚠️<br>
+This mission contains:
+engineering trauma,
+Akku acting 7 despite being 17,
+Saddha searching food nearby,
+and unlimited nonsense 💀<br><br>
+
+MISSION:<br>
+SURVIVE ANOTHER YEAR 🎂
+
+</div>
+
+<button onclick="openPage('choicePage')">
+START MISSION
 </button>
 
 </section>
@@ -360,46 +389,42 @@ READY FOR THIS MISSION?
 
 <p class="subtitle">
 
-Warning:
-This website contains:
+This birthday mission includes:
 <br><br>
 
-• chaos<br>
-• engineering trauma<br>
-• emotional damage<br>
-• Saddha food obsession<br>
-• Akku being mentally 7<br>
-• Aadiii disappearing after saying “2 mins”
+🎮 chaos<br>
+😭 emotional damage<br>
+🍔 Saddha food obsession<br>
+👶 Akku being mentally 7<br>
+💪 Aadiii gym addiction<br>
+📚 engineering survival trauma
 
 </p>
 
-<div class="choice-buttons">
-
-<button onclick="yesRage()">
-YES
+<button onclick="yesMission()">
+YES 🎮
 </button>
 
 <button id="noBtn">
-NO
+NO 💀
 </button>
-
-</div>
 
 </section>
 
-<!-- MEME PAGE -->
+<!-- MEME -->
 
 <section id="memePage" class="page">
 
 <h1 class="glitch">
-WRONG CHOICE 💀
+MISSION FAILED 💀
 </h1>
 
-<img src="https://media.tenor.com/7oKI8SKh1-AAAAAM/cat-cat-meme.gif"
-width="300">
+<img src="https://media.tenor.com/7oKI8SKh1-AAAAAM/cat-cat-meme.gif" width="300">
 
 <p class="subtitle">
+
 Bro really thought NO was an option 😭
+
 </p>
 
 <button onclick="openPage('choicePage')">
@@ -457,7 +482,7 @@ CINEMATIC DATABASE 🎬
 </video>
 
 <button onclick="openPage('quizPage')">
-START QUIZ
+START CHAOS QUIZ
 </button>
 
 </section>
@@ -487,34 +512,37 @@ CHAOS TRIO QUIZ 🎮
 <div class="letter">
 
 <h1 class="glitch">
-MESSAGE FOR YOU 💌
+HAPPY BIRTHDAY AADIII 🎂
 </h1>
 
 <p>
 
-Happy Birthday Aadiii 🎮✨<br><br>
+Happy Birthdayyy 🎮✨<br><br>
 
-Thank you for being one of the most chaotic,
-funny,
-annoying,
-and important people ever.<br><br>
+Thank you for being one of the funniest,
+most chaotic,
+most annoying,
+and most important people ever 😭<br><br>
 
 Engineering honestly would've been WAY more boring without you.<br><br>
 
 Thank you for:
 sleeping during night study,
 disappearing after saying “2 mins”,
-creating chaos,
-and still somehow surviving everything 😭<br><br>
+creating chaos every day,
+and somehow surviving engineering 💀<br><br>
 
 Hope this year gives you:
 better sleep schedule,
 less procrastination,
 more happiness,
-and unlimited gym energy ✨<br><br>
+more gym energy,
+and fewer last-night study sessions 😭<br><br>
 
-Mission status:
-legendary bestfriend unlocked 🎉
+And thank you for being such an important part of our chaotic trio ✨<br><br>
+
+MISSION STATUS:<br>
+LEGENDARY BESTFRIEND UNLOCKED 🎉
 
 </p>
 
@@ -536,13 +564,13 @@ MISSION COMPLETE 🎉
 
 <p class="subtitle">
 
-Achievement Unlocked:
-Survived Another Year
+Achievement Unlocked:<br>
+Survived Another Year 🎂
 
 </p>
 
 <button onclick="celebrate()">
-CELEBRATE
+CELEBRATE 🎮
 </button>
 
 </section>
@@ -551,7 +579,7 @@ CELEBRATE
 
 <script>
 
-/* PAGE */
+/* PAGE SWITCH */
 
 function openPage(id){
 
@@ -571,7 +599,7 @@ let pass=document.getElementById('password').value;
 
 if(pass==="bestie"){
 
-openPage('choicePage');
+openPage('aadiPage');
 
 }
 else{
@@ -584,9 +612,9 @@ alert("ACCESS DENIED 💀");
 
 /* YES BUTTON */
 
-function yesRage(){
+function yesMission(){
 
-alert("Too late. You're trapped now 😭🎮");
+alert("Too late bro. You're trapped in the birthday mission now 😭🎮");
 
 openPage('memoryPage');
 
@@ -623,6 +651,12 @@ options:[
 "B) Saddha",
 "C) Aadiii",
 "D) Entirely fictional event"
+],
+correct:0,
+roasts:[
+"Wrong. Akku carrying engineering again 😭",
+"System detected: zero seriousness 💀",
+"Aadiii definitely chose this answer 😭"
 ]
 },
 
@@ -633,6 +667,12 @@ options:[
 "B) Aadiii",
 "C) Saddha",
 "D) Entire hostel population"
+],
+correct:1,
+roasts:[
+"Wake up first then answer 😭",
+"Sleep > semester confirmed 💀",
+"Engineering survivor but unconscious"
 ]
 },
 
@@ -643,16 +683,28 @@ options:[
 "B) Professional eater",
 "C) Walking Swiggy",
 "D) All of the above"
+],
+correct:3,
+roasts:[
+"Saddha disappointed by your answer 😭",
+"Detected: low foodie intelligence 💀",
+"Food was obviously the answer"
 ]
 },
 
 {
-question:"Who is mentally 7 years old in this trio?",
+question:"Who is mentally 7 years old despite being 17?",
 options:[
 "A) Akku",
 "B) Akku",
 "C) Akku",
 "D) still Akku"
+],
+correct:3,
+roasts:[
+"Wrong. Akku still kindergarten coded 😭",
+"17 outside, 7 inside 💀",
+"Certified kiddo detected"
 ]
 },
 
@@ -663,6 +715,12 @@ options:[
 "B) Gym rat detected",
 "C) Cardio NPC",
 "D) All of the above"
+],
+correct:3,
+roasts:[
+"Gym addiction detected 💪😭",
+"Bro chose wrong after chest day 💀",
+"Physical activity > responsibilities"
 ]
 },
 
@@ -673,26 +731,44 @@ options:[
 "B) Babysitter of the trio",
 "C) Future engineer",
 "D) All of the above"
+],
+correct:3,
+roasts:[
+"Without Akku this trio would've failed 😭",
+"Engineering department thanks Akku 💀",
+"Chaos levels too high"
 ]
 },
 
 {
-question:"Who would accidentally sleep during night study before exams?",
+question:"Who accidentally sleeps during night study before exams?",
 options:[
 "A) Aadiii",
 "B) Sleep simulator",
 "C) Human power-saving mode",
 "D) All of the above"
+],
+correct:3,
+roasts:[
+"Academic comeback not found 😭",
+"Bro hibernates before exams 💀",
+"Sleep detected. Braincells disconnected."
 ]
 },
 
 {
-question:"Who would spend more time deciding food than studying?",
+question:"Who spends more time choosing food than studying?",
 options:[
 "A) Saddha",
 "B) Professional menu analyst",
 "C) Food over future",
 "D) All of the above"
+],
+correct:3,
+roasts:[
+"Saddha busy checking Zomato 😭",
+"Engineering? No. Food? Yes 💀",
+"Cafeteria addiction confirmed"
 ]
 }
 
@@ -707,10 +783,10 @@ quizData[currentQuestion].question;
 
 let optionsHTML = "";
 
-quizData[currentQuestion].options.forEach(option=>{
+quizData[currentQuestion].options.forEach((option,index)=>{
 
 optionsHTML += `
-<div class="option" onclick="nextQuestion()">
+<div class="option" onclick="checkAnswer(${index})">
 ${option}
 </div>
 `;
@@ -722,7 +798,13 @@ optionsHTML;
 
 }
 
-function nextQuestion(){
+function checkAnswer(selected){
+
+const current = quizData[currentQuestion];
+
+if(selected === current.correct){
+
+alert("✅ Achievement Unlocked: Braincells Found 😭🔥");
 
 currentQuestion++;
 
@@ -734,6 +816,18 @@ loadQuestion();
 else{
 
 openPage('letterPage');
+
+}
+
+}
+else{
+
+const randomRoast =
+current.roasts[
+Math.floor(Math.random()*current.roasts.length)
+];
+
+alert("❌ " + randomRoast);
 
 }
 
@@ -750,6 +844,12 @@ particleCount:500,
 spread:180,
 origin:{y:0.6}
 });
+
+setTimeout(()=>{
+
+alert("THE END?\n\nnah.\nmore chaos coming soon 😭🎮");
+
+},1000);
 
 }
 
