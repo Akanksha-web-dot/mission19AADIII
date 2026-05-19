@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birthday Mission</title>
+<title>MISSION: AADIII 🎮</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -42,19 +42,45 @@ z-index:-2;
 filter:blur(2px);
 }
 
-/* SCANLINES */
+/* GLITCH */
 
-body::after{
-content:'';
-position:fixed;
-width:100%;
-height:100%;
-background:
-linear-gradient(transparent 95%, rgba(0,255,255,0.08) 100%);
-background-size:100% 4px;
-z-index:-1;
-pointer-events:none;
+.glitch{
+
+font-size:4rem;
+font-family:'Orbitron',sans-serif;
+font-weight:900;
+position:relative;
+text-transform:uppercase;
+color:#00e5ff;
+animation:glitch 1s infinite;
+
 }
+
+@keyframes glitch{
+
+0%{
+text-shadow:3px 3px #ff00ff;
+}
+
+25%{
+text-shadow:-3px -3px #00e5ff;
+}
+
+50%{
+text-shadow:3px -3px #ff00ff;
+}
+
+75%{
+text-shadow:-3px 3px #00e5ff;
+}
+
+100%{
+text-shadow:3px 3px #ff00ff;
+}
+
+}
+
+/* PAGE */
 
 .page{
 position:absolute;
@@ -73,18 +99,11 @@ overflow-y:auto;
 display:flex;
 }
 
-h1{
-font-family:'Orbitron',sans-serif;
-font-size:3rem;
-margin-bottom:20px;
-color:#00e5ff;
-text-shadow:0 0 20px #00e5ff;
-}
-
 .subtitle{
 max-width:700px;
 line-height:1.8;
-margin-bottom:25px;
+margin-top:20px;
+margin-bottom:20px;
 }
 
 /* BUTTON */
@@ -100,6 +119,7 @@ cursor:pointer;
 margin:15px;
 transition:0.3s;
 font-size:1rem;
+box-shadow:0 0 20px rgba(0,229,255,0.5);
 }
 
 button:hover{
@@ -119,26 +139,13 @@ font-size:1rem;
 
 /* INTRO */
 
-.loading{
-width:300px;
-height:20px;
-background:#111827;
-border-radius:20px;
-overflow:hidden;
-margin-top:20px;
-}
-
-.bar{
-height:100%;
-width:0%;
-background:linear-gradient(90deg,#00e5ff,#ff00ff);
-animation:load 4s forwards;
-}
-
-@keyframes load{
-100%{
-width:100%;
-}
+.terminal{
+font-family:monospace;
+font-size:1.2rem;
+color:#00ff99;
+text-align:left;
+max-width:800px;
+line-height:2;
 }
 
 /* YES NO */
@@ -153,7 +160,7 @@ position:relative;
 position:relative;
 }
 
-/* SLIDESHOW */
+/* MEMORIES */
 
 .slider{
 position:relative;
@@ -284,35 +291,13 @@ text-shadow:0 0 40px #ff00ff;
 
 }
 
-/* ACHIEVEMENT */
-
-.achievement{
-margin-top:20px;
-padding:15px 25px;
-background:#111827;
-border-radius:20px;
-animation:pop 1s infinite alternate;
-}
-
-@keyframes pop{
-
-from{
-transform:scale(1);
-}
-
-to{
-transform:scale(1.05);
-}
-
-}
-
 </style>
 
 </head>
 
 <body>
 
-<!-- AUDIO -->
+<!-- MUSIC -->
 
 <audio autoplay loop>
 
@@ -324,15 +309,24 @@ transform:scale(1.05);
 
 <section id="intro" class="page active">
 
-<h1>INITIALIZING BIRTHDAY DATABASE...</h1>
+<h1 class="glitch">
+ACCESSING BIRTHDAY DATABASE...
+</h1>
 
-<div class="loading">
-<div class="bar"></div>
+<div class="terminal">
+
+> SYSTEM BOOTING...<br>
+> LOADING CHAOS TRIO FILES...<br>
+> DETECTING AADIII...<br>
+> WARNING: HIGH LEVELS OF NONSENSE FOUND<br>
+> SCANNING ENGINEERING SURVIVAL DATA...<br>
+> ACCESS GRANTED 🎮
+
 </div>
 
-<p class="subtitle">
-Accessing legendary memories...
-</p>
+<button onclick="openPage('passwordPage')">
+PRESS START
+</button>
 
 </section>
 
@@ -340,16 +334,18 @@ Accessing legendary memories...
 
 <section id="passwordPage" class="page">
 
-<h1>ACCESS REQUIRED 🔐</h1>
+<h1 class="glitch">
+ENTER PASSWORD 🔐
+</h1>
 
 <p class="subtitle">
-Only one chaotic idiot can enter.
+Only legendary idiots allowed.
 </p>
 
-<input type="password" id="password" placeholder="Enter Password">
+<input type="password" id="password" placeholder="ENTER PASSWORD">
 
 <button onclick="checkPassword()">
-ENTER
+UNLOCK
 </button>
 
 </section>
@@ -358,11 +354,28 @@ ENTER
 
 <section id="choicePage" class="page">
 
-<h1>ARE YOU READY FOR THIS MISSION? 🎮</h1>
+<h1 class="glitch">
+READY FOR THIS MISSION?
+</h1>
+
+<p class="subtitle">
+
+Warning:
+This website contains:
+<br><br>
+
+• chaos<br>
+• engineering trauma<br>
+• emotional damage<br>
+• Saddha food obsession<br>
+• Akku being mentally 7<br>
+• Aadiii disappearing after saying “2 mins”
+
+</p>
 
 <div class="choice-buttons">
 
-<button onclick="openPage('memoryPage')">
+<button onclick="yesRage()">
 YES
 </button>
 
@@ -374,14 +387,20 @@ NO
 
 </section>
 
-<!-- MEME -->
+<!-- MEME PAGE -->
 
 <section id="memePage" class="page">
 
-<h1>WRONG CHOICE 💀</h1>
+<h1 class="glitch">
+WRONG CHOICE 💀
+</h1>
 
 <img src="https://media.tenor.com/7oKI8SKh1-AAAAAM/cat-cat-meme.gif"
 width="300">
+
+<p class="subtitle">
+Bro really thought NO was an option 😭
+</p>
 
 <button onclick="openPage('choicePage')">
 TRY AGAIN
@@ -393,7 +412,9 @@ TRY AGAIN
 
 <section id="memoryPage" class="page">
 
-<h1>CORE MEMORIES ✨</h1>
+<h1 class="glitch">
+CORE MEMORY ARCHIVE ✨
+</h1>
 
 <div class="slider">
 
@@ -425,7 +446,9 @@ NEXT MISSION
 
 <section id="videoPage" class="page">
 
-<h1>CINEMATIC ARCHIVE 🎬</h1>
+<h1 class="glitch">
+CINEMATIC DATABASE 🎬
+</h1>
 
 <video controls autoplay>
 
@@ -434,7 +457,7 @@ NEXT MISSION
 </video>
 
 <button onclick="openPage('quizPage')">
-CONTINUE
+START QUIZ
 </button>
 
 </section>
@@ -445,23 +468,13 @@ CONTINUE
 
 <div class="quiz-box">
 
-<h1>BESTFRIEND QUIZ 🎮</h1>
+<h1 class="glitch">
+CHAOS TRIO QUIZ 🎮
+</h1>
 
-<h2 id="question">
-Who is more chaotic?
-</h2>
+<h2 id="question"></h2>
 
-<div class="option" onclick="nextQuestion()">
-A) You
-</div>
-
-<div class="option" onclick="nextQuestion()">
-B) Definitely You
-</div>
-
-<div class="achievement">
-Achievement Unlocked: Chaos Expert
-</div>
+<div id="options"></div>
 
 </div>
 
@@ -473,24 +486,35 @@ Achievement Unlocked: Chaos Expert
 
 <div class="letter">
 
-<h1>MESSAGE FOR YOU 💌</h1>
+<h1 class="glitch">
+MESSAGE FOR YOU 💌
+</h1>
 
 <p>
 
-Happy Birthday to one of my favorite humans ever.<br><br>
+Happy Birthday Aadiii 🎮✨<br><br>
 
-Thank you for every random joke,
-every late night conversation,
-every stupid argument,
-every gaming moment,
-and every memory that made life better.<br><br>
+Thank you for being one of the most chaotic,
+funny,
+annoying,
+and important people ever.<br><br>
 
-You genuinely deserve happiness,
-success,
-peace,
-and unlimited GTA wins 🎮✨<br><br>
+Engineering honestly would've been WAY more boring without you.<br><br>
 
-Thank you for being part of my story.
+Thank you for:
+sleeping during night study,
+disappearing after saying “2 mins”,
+creating chaos,
+and still somehow surviving everything 😭<br><br>
+
+Hope this year gives you:
+better sleep schedule,
+less procrastination,
+more happiness,
+and unlimited gym energy ✨<br><br>
+
+Mission status:
+legendary bestfriend unlocked 🎉
 
 </p>
 
@@ -511,7 +535,10 @@ MISSION COMPLETE 🎉
 </h1>
 
 <p class="subtitle">
-Another legendary year unlocked.
+
+Achievement Unlocked:
+Survived Another Year
+
 </p>
 
 <button onclick="celebrate()">
@@ -524,15 +551,7 @@ CELEBRATE
 
 <script>
 
-/* INTRO */
-
-setTimeout(()=>{
-
-openPage('passwordPage');
-
-},4000);
-
-/* PAGE SWITCH */
+/* PAGE */
 
 function openPage(id){
 
@@ -563,6 +582,16 @@ alert("ACCESS DENIED 💀");
 
 }
 
+/* YES BUTTON */
+
+function yesRage(){
+
+alert("Too late. You're trapped now 😭🎮");
+
+openPage('memoryPage');
+
+}
+
 /* NO BUTTON */
 
 const noBtn=document.getElementById('noBtn');
@@ -585,18 +614,139 @@ openPage('memePage');
 
 /* QUIZ */
 
+const quizData = [
+
+{
+question:"Who says 'guys we should seriously study now'?",
+options:[
+"A) Akku",
+"B) Saddha",
+"C) Aadiii",
+"D) Entirely fictional event"
+]
+},
+
+{
+question:"Who disappears during sem prep because sleep is more important?",
+options:[
+"A) Akku",
+"B) Aadiii",
+"C) Saddha",
+"D) Entire hostel population"
+]
+},
+
+{
+question:"Who treats every outing like a food festival?",
+options:[
+"A) Saddha",
+"B) Professional eater",
+"C) Walking Swiggy",
+"D) All of the above"
+]
+},
+
+{
+question:"Who is mentally 7 years old in this trio?",
+options:[
+"A) Akku",
+"B) Akku",
+"C) Akku",
+"D) still Akku"
+]
+},
+
+{
+question:"Who says 'one last workout' and disappears for 3 hours?",
+options:[
+"A) Aadiii",
+"B) Gym rat detected",
+"C) Cardio NPC",
+"D) All of the above"
+]
+},
+
+{
+question:"Who studies properly while the other two create chaos?",
+options:[
+"A) Akku",
+"B) Babysitter of the trio",
+"C) Future engineer",
+"D) All of the above"
+]
+},
+
+{
+question:"Who would accidentally sleep during night study before exams?",
+options:[
+"A) Aadiii",
+"B) Sleep simulator",
+"C) Human power-saving mode",
+"D) All of the above"
+]
+},
+
+{
+question:"Who would spend more time deciding food than studying?",
+options:[
+"A) Saddha",
+"B) Professional menu analyst",
+"C) Food over future",
+"D) All of the above"
+]
+}
+
+];
+
+let currentQuestion = 0;
+
+function loadQuestion(){
+
+document.getElementById("question").innerText =
+quizData[currentQuestion].question;
+
+let optionsHTML = "";
+
+quizData[currentQuestion].options.forEach(option=>{
+
+optionsHTML += `
+<div class="option" onclick="nextQuestion()">
+${option}
+</div>
+`;
+
+});
+
+document.getElementById("options").innerHTML =
+optionsHTML;
+
+}
+
 function nextQuestion(){
+
+currentQuestion++;
+
+if(currentQuestion < quizData.length){
+
+loadQuestion();
+
+}
+else{
 
 openPage('letterPage');
 
 }
+
+}
+
+window.onload = loadQuestion;
 
 /* CONFETTI */
 
 function celebrate(){
 
 confetti({
-particleCount:400,
+particleCount:500,
 spread:180,
 origin:{y:0.6}
 });
